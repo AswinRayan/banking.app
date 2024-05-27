@@ -34,26 +34,6 @@ public class AccountController {
 	private AccountService accountService;
 	private static final String CONTENT_TYPE = "application/json";
 
-//	@RequestMapping(value = { "/create" }, method = RequestMethod.POST, consumes = { "application/json" }, produces = {
-//			CONTENT_TYPE })
-//	public @ResponseBody String createCustomer(final @RequestBody String requestData,
-//			final @RequestHeader HttpHeaders paramHttpHeaders, final HttpServletRequest httpRequest,
-//			final HttpServletResponse paramHttpResp)
-//			throws SecurityOperationFailure, NoRecordFound, CustomerException, ParseException, FieldValidationFailure,
-//			InvalidBufferStream, IOException, SocketClosedException, RoutingException {
-//		byte[] responseBytes = null;
-//		try (Session session = 
-//
-//				.getSession()) {
-//			final Transaction txn = session.beginTransaction();
-//			responseBytes = customers.createCustomer(requestData, paramHttpHeaders, httpRequest, paramHttpResp,
-//					session);
-//			CommonHibernateDAO.finalizeSession(session, txn);
-//
-//		}
-//		return new String(responseBytes, StandardCharsets.UTF_8);
-	@PostMapping(value = { "/createAccount" }, consumes = { CONTENT_TYPE }, produces = { CONTENT_TYPE })
-
 	public @ResponseBody String addAccounts(@RequestBody String accountDto)
 			throws JsonMappingException, JsonProcessingException {
 		AccountDto dto = RestApiRequest.validateRequest(accountDto, AccountDto.class);
